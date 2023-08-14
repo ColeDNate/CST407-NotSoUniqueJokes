@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
     // output data of each row
 
     echo "<div id='accordion'>";
-    while($stmt->fetch()) {
+    while($row = $result->fetch_assoc()) {
         $safe_joke_question = htmlspecialchars($Joke_question);
         $safe_joke_answer = htmlspecialchars($Joke_answer);
 
