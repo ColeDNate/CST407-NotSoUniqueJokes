@@ -76,7 +76,7 @@ error_reporting(E_ALL);
 <a href='login_form.php'>Or login here</a>
  
 <?php 
-$mysqli->close();
+mysqli_close($conn);
 ?>
 
 </body>
