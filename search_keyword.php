@@ -23,7 +23,7 @@ echo "this is our keyword: " . $keywordfromform . "<br>";
 echo "<h2>Show all jokes with the word " . $keywordfromform . "</h2>";
 $keywordfromform = "%" . $keywordfromform . "%";
 
-$stmt = $mysqli->prepare("SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name 
+$stmt = $mysqli->prepare($conn, "SELECT JokeID, Joke_question, Joke_answer, jokes_table.user_id, user_name 
                           FROM jokes.jokes_table JOIN jokes.users 
                           ON jokes_table.user_id = users.user_id 
                           WHERE Joke_question LIKE ?");
