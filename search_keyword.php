@@ -40,8 +40,8 @@ if ($result->num_rows > 0) {
 
     echo "<div id='accordion'>";
     while($row = $result->fetch_assoc()) {
-        $safe_joke_question = htmlspecialchars($Joke_question);
-        $safe_joke_answer = htmlspecialchars($Joke_answer);
+        $safe_joke_question = $row['Joke_question'];
+        $safe_joke_answer = $row['Joke_answer'];
 
         echo "<h3>" . $safe_joke_question . "</h3>";
         
