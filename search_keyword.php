@@ -33,7 +33,6 @@ $stmt->bind_param("s", $keywordfromform);
 mysqli_stmt_execute($stmt);
 $stmt->store_result();
 
-$result = mysqli_stmt_get_result($stmt);
 mysqli_stmt_close($stmt);
 
 if ($stmt->num_rows > 0) {
