@@ -31,11 +31,11 @@ $stmt = mysqli_prepare($conn, "SELECT JokeID, Joke_question, Joke_answer, jokes_
 $stmt->bind_param("s", $keywordfromform);
 
 mysqli_stmt_execute($stmt);
-$stmt->store_result();
+$result = $stmt->get_result();
 
 mysqli_stmt_close($stmt);
 
-if ($stmt->num_rows > 0) {
+if ($result->num_rows > 0) {
     // output data of each row
 
     echo "<div id='accordion'>";
