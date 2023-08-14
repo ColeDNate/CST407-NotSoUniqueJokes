@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<h3>" . $row['Joke_question'] . "</h3>";
 
-        echo "<div><p>" . $row["Joke_answer"] . " submitted by user #" . $row['users_id'] . "</p></div>";
+        echo "<div><p>" . $row["Joke_answer"] . " submitted by user #" . $row['user_id'] . "</p></div>";
     }
 } else {
     echo "0 results";
