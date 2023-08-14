@@ -54,7 +54,7 @@ else if ($new_password1 != $new_password2) {
 } else {
 
     // add the new user
-    $sql = "INSERT INTO users (user_id, user_name, password) VALUES (null, '$new_username', '$hashed_password')";
+    $sql = "INSERT INTO users (user_id, user_name, password) VALUES (DEFAULT, '$new_username', '$hashed_password')";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
