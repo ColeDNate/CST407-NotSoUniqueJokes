@@ -4,10 +4,10 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 // modify these settings according to the account on your database server.
-$host = "localhost";
+$host = "notsouniquejokes.azurewebsites.net";
 $port = "3306";
-$username = "root";
-$user_pass = "root";
+$username = "JokesAdmin";
+$user_pass = "LopesLeap42";
 $database_in_use = "jokes";
 
 
