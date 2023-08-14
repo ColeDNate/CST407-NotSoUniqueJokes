@@ -19,6 +19,8 @@ $sql = "SELECT JokeID, Joke_question, Joke_answer, users_id FROM Jokes_table";
 //$result = $mysqli->query($sql);
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
+
+$result = mysqli_stmt_get_result($stmt);
 mysqli_stmt_close($stmt);
 
 if ($result->num_rows > 0) {
