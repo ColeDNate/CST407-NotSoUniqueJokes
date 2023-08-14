@@ -15,7 +15,7 @@
 <?php
 include "db_connect.php";
 
-$sql = "SELECT JokeID, Joke_question, Joke_answer, users_id FROM Jokes_table";
+$sql = "SELECT JokeID, Joke_question, Joke_answer, user_id FROM Jokes_table";
 //$result = $mysqli->query($sql);
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_execute($stmt);
