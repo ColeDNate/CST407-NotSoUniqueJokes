@@ -10,11 +10,13 @@ $username = "JokesAdmin";
 $user_pass = "LopesLeap42";
 $database_in_use = "jokes";
 
-
-$mysqli = new mysqli($host, $username, $user_pass, $database_in_use);
-if ($mysqli->connect_error) {
-    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+//attempting fix through azure quickstart
+$conn - mysqli_init();
+mysqli_real_connect($conn, $host, $username, $user_pass, $database_in_use, 3306);
+if (mysqli_connect_errno($conn)) {
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
+
 echo $mysqli->host_info . "<br>";
 
 ?>
