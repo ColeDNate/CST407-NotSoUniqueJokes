@@ -50,10 +50,7 @@ include "db_connect.php";
 
  
 <?php
-//include "search_keyword.php";
-
-$mysqli->close();
-
+mysqli_close($conn);
 ?>
 </body>
 </html>
