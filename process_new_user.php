@@ -59,7 +59,7 @@ else if ($new_password1 != $new_password2) {
     mysqli_stmt_bind_param($stmt, "ss", $new_username, $hashed_password);
     
     if (mysqli_stmt_execute($stmt)) {
-        echo "Registration success!";
+        echo "Registration success!<br>";
     } else {
         echo "Something went wrong.  Not registered.";
     }
