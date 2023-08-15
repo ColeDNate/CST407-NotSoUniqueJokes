@@ -54,17 +54,15 @@ else if ($new_password1 != $new_password2) {
 } else {
 
     // add the new user
-    $sql = "INSERT INTO users (user_name, password) VALUES ('$new_username', '$hashed_password')";
+    $sql = "INSERT INTO users (user_name, password) VALUES (?, ?)";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    if ($result) {
+    mysqli_stmt_bind_param($stmt, "ss", $new_username, $hashed_password);
+    
+    if (mysqli_stmt_execute($stmt)) {
         echo "Registration success!";
-    }
-    else {
+    } else {
         echo "Something went wrong.  Not registered.";
     }
-
 }
 
 echo "<a href = 'index.php'>Return to main</a>";
