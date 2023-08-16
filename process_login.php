@@ -9,7 +9,7 @@
  
 include "db_connect.php";
 
-$username = addslashes($_POST['username']);
+$username = $_POST['username'];
 $password = $_POST['password'];
 
 echo "<h2>You attempted to login with " . $username . " and " . $password . "</h2>";
