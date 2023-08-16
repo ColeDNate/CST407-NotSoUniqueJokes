@@ -22,7 +22,7 @@ $stmt->bind_param("s", $username);
 mysqli_stmt_execute($stmt);
 $result = $stmt->get_result();
 
-if ($stmt->num_rows > 0 ) {
+if ($result->num_rows > 0 ) {
     echo "Found 1 person with that username<br>";
 
     // Fetch the result row before binding results
