@@ -40,14 +40,13 @@ if ($stmt->num_rows > 0 ) {
     }
     else {
         echo "Password does not match<br>";
-        session_destroy();
+        $_SESSION = [];
     }
     
 
 } else {
     echo "0 results. Not logged in<br>";
     $_SESSION =  [];
-    session_destroy();
 }
 
 echo "Session variable = <br>";
