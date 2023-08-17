@@ -1,3 +1,12 @@
+<?php
+session_start();
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+    include "db_connect.php"; 
+?>
+
 <html>
 <head>
     <!-- Compiled and minified CSS -->
@@ -12,15 +21,6 @@
 <h1>Jokes Page</h1>
 <a href="search_all_jokes.php">Show all jokes</a>
 <br>
-
-<?php
-session_start();
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
-
-    include "db_connect.php"; 
-?>
 
 <form class="form-horizontal" action="search_keyword.php">
     <fieldset>
