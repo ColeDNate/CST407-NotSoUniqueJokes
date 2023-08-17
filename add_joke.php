@@ -18,11 +18,17 @@ $userid = $_SESSION['userid'];
 echo "<h2>Trying to add a new joke " . $new_joke_question . " and " . $new_joke_answer . "</h2>";
 echo "<h2>For user " . $userid . "</h2>";
 
-$stmt = $mysqli->prepare("INSERT INTO jokes_table (JokeID, Joke_question, Joke_answer, user_id) VALUES (null, ?, ?, ?)");
-$stmt->bind_param("ssi", $new_joke_question, $new_joke_answer, $userid);
+$sql ="INSERT INTO jokes_table (JokeID, Joke_question, Joke_answer, user_id) VALUES (null, ?, ?, ?)";
 
-$stmt->execute();
-$stmt->close();
+$stmt = mysqli_prepare($conn, $sql);
+
+mysqli_stmt_bind_param("ssi", $new_joke_question, $new_joke_answer, $userid);
+
+if (mysqli_stmt_execute($stmt)) {
+    echo "Joke creation Success!<br>";
+} else {
+    echo "Something went wrong.  Not registered.";
+}
 
 
 include "search_all_jokes.php";
