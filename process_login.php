@@ -1,12 +1,14 @@
+<?
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
+
 <html>
 <head>
 
 </head>
- <?php
- session_start();
- error_reporting(E_ALL);
- ini_set('display_errors', 1);
- 
+<?php
 include "db_connect.php";
 
 $username = $_POST['username'];
