@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $safe_joke_question = $row['Joke_question'];
         $safe_joke_answer = $row['Joke_answer'];
-        $safe_username = $row['user_name']
+        $safe_username = $row['user_name'];
 
         echo "<h3>" . $safe_joke_question . "</h3>";
         
