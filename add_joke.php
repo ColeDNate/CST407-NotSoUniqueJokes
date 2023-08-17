@@ -22,7 +22,7 @@ $sql ="INSERT INTO jokes_table (Joke_question, Joke_answer, user_id) VALUES (?, 
 
 $stmt = mysqli_prepare($conn, $sql);
 
-mysqli_stmt_bind_param("ssi", $new_joke_question, $new_joke_answer, $userid);
+mysqli_stmt_bind_param($stmt, "ssi", $new_joke_question, $new_joke_answer, $userid);
 
 if (mysqli_stmt_execute($stmt)) {
     echo "Joke creation Success!<br>";
