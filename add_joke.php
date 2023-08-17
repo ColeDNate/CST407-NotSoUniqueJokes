@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-if (! $_SESSION['user_name']) {
+echo "Session username: " . $_SESSION['username'] . "<br>";
+
+if (! $_SESSION['username']) {
     echo "Only logged in users may access this page.  Click <a href='login_form.php'here </a> to login<br>";
     exit;
 }
@@ -11,7 +13,7 @@ include "db_connect.php";
 
 $new_joke_question =  addslashes($_GET['newjoke']);
 $new_joke_answer =  addslashes($_GET['jokeanswer']);
-$userid = $_SESSION['user_id'];
+$userid = $_SESSION['userid'];
 
 echo "<h2>Trying to add a new joke " . $new_joke_question . " and " . $new_joke_answer . "</h2>";
 echo "<h2>For user " . $userid . "</h2>";
