@@ -33,10 +33,10 @@ if ($result->num_rows > 0 ) {
  
     if (password_verify($password, $fetched_pass)) {
         echo "The password matches<br>";
-        echo "Login success<br>"; 
-        echo "Attempted session username: " . $_SESSION['username'] . "<br>";
+        echo "Login success<br>";
         $_SESSION['username'] = $username;
-        $_SESSION['userid'] = $userid;
+        $_SESSION['userid'] = $userid; 
+        echo "Attempted session username: " . $_SESSION['username'] . "<br>";
         exit;
     }
     else {
